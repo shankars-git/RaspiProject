@@ -1,0 +1,37 @@
+
+sudo crontab -e 
+
+
+#@reboot /usr/bin/python /home/raspberry/Mini_Project/IMU_Server.py >> /home/raspberry/logs/IMU_Server.log 2>&1
+#@reboot /usr/bin/python /home/raspberry/Mini_Project/Client.py >> /home/raspberry/logs/Client.log 2>&1
+
+
+
+Dashboard  : 
+
+https://beebotte.com/dash/9f746fc0-66a1-11ee-a7c0-99ff9311e4cf?shareid=shareid_jaWa9ZamV3cXnHIw
+
+
+
+
+TCP Dump : sudo tcpdump -i lo -w Packet.pcap -s 65535
+
+
+
+We will get the orientation data in radians from the Sense HAT on the Raspberry Pi board , this will be done by a server application which will open a socket in the localhost network and send the data every second once the client has established a connection to server,
+The client will check for the thresholds and if that condition is not met will display a "X" on the LED Matrix in white colour and report the readings to Beebotte using the Python SDK (REST API).
+In BeeBotte we have a dashboard to visualize the realtime change in yaw pitch and roll
+
+
+Reference
+
+https://projects.raspberrypi.org/en/projects/getting-started-with-the-sense-hat/8
+
+
+https://beebotte.com/tutorials/monitor_humidity_and_temperature_with_raspberrypi
+
+
+https://www.raspberrypi.com/documentation/accessories/sense-hat.html
+
+https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html
+
